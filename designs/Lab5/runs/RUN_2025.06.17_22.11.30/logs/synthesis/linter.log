@@ -1,0 +1,6 @@
+%Warning-UNUSEDSIGNAL: /openlane/designs/Lab5/src/instr_decoder.v:3:24: Bits of signal are not used: 'instr'[13:0]
+                                                                      : ... note: In instance 'semi_cpu_top.DEC0'
+    3 |     input  wire [31:0] instr,
+      |                        ^~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.018
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.

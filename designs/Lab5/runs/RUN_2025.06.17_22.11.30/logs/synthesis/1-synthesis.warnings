@@ -1,0 +1,3 @@
+Warning: Replacing memory \regs with list of registers. See /openlane/designs/Lab5/src/reg_file.v:18
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+Warnings: 1 unique messages, 1 total

@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 46850 48994
+string GDS_END 7606962
+string GDS_FILE /openlane/designs/Lab5/runs/RUN_2025.06.17_22.11.30/results/signoff/semi_cpu_top.magic.gds
+string GDS_START 1059970
+<< end >>
