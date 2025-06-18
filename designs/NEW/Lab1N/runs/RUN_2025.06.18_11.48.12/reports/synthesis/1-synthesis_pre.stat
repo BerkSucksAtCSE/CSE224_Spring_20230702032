@@ -1,0 +1,16 @@
+
+49. Printing statistics.
+
+=== twoscomp ===
+
+   Number of wires:                  4
+   Number of wire bits:             10
+   Number of public wires:           2
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $_OR_                           2
+     $_XOR_                          3
+

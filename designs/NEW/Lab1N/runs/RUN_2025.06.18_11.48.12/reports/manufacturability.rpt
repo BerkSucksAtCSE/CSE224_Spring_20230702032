@@ -1,0 +1,19 @@
+Design Name: twoscomp
+Run Directory: /openlane/designs/Lab1N/runs/RUN_2025.06.18_11.48.12
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/Lab1N/runs/RUN_2025.06.18_11.48.12/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/Lab1N/runs/RUN_2025.06.18_11.48.12/logs/signoff/39-twoscomp.lef.lvs.log
+Number of nets: 21                         |Number of nets: 21                         
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/Lab1N/runs/RUN_2025.06.18_11.48.12/logs/signoff/42-arc.log
+Pin violations: 0
+Net violations: 0

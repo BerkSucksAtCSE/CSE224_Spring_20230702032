@@ -1,0 +1,16 @@
+digraph "twoscomp" {
+label="twoscomp";
+rankdir="LR";
+remincross=true;
+n3 [ shape=octagon, label="Y", color="black", fontcolor="black" ];
+n4 [ shape=octagon, label="A", color="black", fontcolor="black" ];
+v0 [ label="1'1" ];
+c6 [ shape=record, label="{{<p4> A|<p5> B}|$2\n$add|{<p3> Y}}",  ];
+c7 [ shape=record, label="{{<p4> A}|$1\n$not|{<p3> Y}}",  ];
+x1 [shape=point, ];
+c6:p3:e -> x1:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c7:p3:e -> c6:p4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+x1:e -> n3:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> c7:p4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+v0:e -> c6:p5:w [color="black", fontcolor="black", label=""];
+}
