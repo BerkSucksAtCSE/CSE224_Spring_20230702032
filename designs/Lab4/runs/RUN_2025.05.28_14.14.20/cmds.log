@@ -1,0 +1,30 @@
+Wed May 28 14:14:21 +0000 2025 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/layers.list /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef}"
+
+Wed May 28 14:14:21 +0000 2025 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/merged.nom.lef -i /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Wed May 28 14:14:21 +0000 2025 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/merged.min.lef -i /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Wed May 28 14:14:21 +0000 2025 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/merged.max.lef -i /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Wed May 28 14:14:21 +0000 2025 - Executing "{python3 /openlane/scripts/mergeLib.py --output /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/synthesis/merged.lib --name sky130A_merged /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Wed May 28 14:14:21 +0000 2025 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/synthesis/trimmed.lib.exclude.list --output /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/synthesis/trimmed.lib /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/synthesis/merged.lib}"
+
+Wed May 28 14:14:21 +0000 2025 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/cts/cts.lib.exclude.list --output /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/cts/cts.lib /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Wed May 28 14:14:21 +0000 2025 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/cts/cts-fastest.lib.exclude.list --output /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/cts/cts-fastest.lib /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib}"
+
+Wed May 28 14:14:22 +0000 2025 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/cts/cts-slowest.lib.exclude.list --output /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/cts/cts-slowest.lib /home/mertg/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib}"
+
+Wed May 28 14:14:22 +0000 2025 - Executing "{python3 /openlane/scripts/new_tracks.py -i /home/mertg/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/routing/config.tracks}"
+
+Wed May 28 14:14:22 +0000 2025 - Executing "{echo {OpenLane e73fb3c57e687a0023fcd4dcfd1566ecd478362a} > /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/OPENLANE_COMMIT}"
+
+Wed May 28 14:14:22 +0000 2025 - Executing "{yosys -c /openlane/scripts/yosys/blackbox.tcl}"
+
+Wed May 28 14:14:22 +0000 2025 - Executing "{verilator -Wall --lint-only --Wno-DECLFILENAME --top-module top /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/tmp/synthesis/blackbox/sky130_fd_sc_hd__blackbox.v /openlane/designs/Lab4/src/register_file.v /openlane/designs/Lab4/src/alu.v /openlane/designs/Lab4/src/top.v -Wno-fatal --relative-includes |& tee /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/logs/synthesis/linter.log /dev/null}"
+
+Wed May 28 14:14:22 +0000 2025 - Executing "{python3 /openlane/scripts/write_runtime.py --conclude --seconds --time-in 1748441662 {flow failed}}"
+
+Wed May 28 14:14:22 +0000 2025 - Executing "{python3 /openlane/scripts/generate_reports.py -d /openlane/designs/Lab4 --design_name top --tag RUN_2025.05.28_14.14.20 --output_file /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/reports/metrics.csv --man_report /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20/reports/manufacturability.rpt --run_path /openlane/designs/Lab4/runs/RUN_2025.05.28_14.14.20}"
+

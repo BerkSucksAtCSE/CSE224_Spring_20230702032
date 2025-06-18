@@ -1,0 +1,4 @@
+%Error: /openlane/designs/Lab4/src/register_file.v:14:19: Can't find definition of variable: 'clk'
+   14 |  always @(posedge clk) begin
+      |                   ^~~
+%Error: Exiting due to 1 error(s)

@@ -1,0 +1,14 @@
+%Warning-EOFNEWLINE: /openlane/designs/Lab4/src/register_file.v:19:2: Missing newline at end of file (POSIX 3.206).
+                                                                    : ... Suggest add newline.
+   19 |  
+      |  ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.018
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-EOFNEWLINE: /openlane/designs/Lab4/src/ALU.v:17:10: Missing newline at end of file (POSIX 3.206).
+                                                           : ... Suggest add newline.
+   17 | endmodule
+      |          ^
+%Error: /openlane/designs/Lab4/src/testbench.v:1:1: syntax error, unexpected IDENTIFIER
+    1 | timescale 1ns / 1ps
+      | ^~~~~~~~~
+%Error: Exiting due to 1 error(s)

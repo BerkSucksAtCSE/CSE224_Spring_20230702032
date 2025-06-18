@@ -1,0 +1,29 @@
+%Warning-EOFNEWLINE: /openlane/designs/Lab4/src/register_file.v:19:2: Missing newline at end of file (POSIX 3.206).
+                                                                    : ... Suggest add newline.
+   19 |  
+      |  ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.018
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-EOFNEWLINE: /openlane/designs/Lab4/src/alu.v:17:10: Missing newline at end of file (POSIX 3.206).
+                                                           : ... Suggest add newline.
+   17 | endmodule
+      |          ^
+%Warning-PINMISSING: /openlane/designs/Lab4/src/top.v:12:19: Cell has missing pin: 'clk'
+   12 |     register_file RF (
+      |                   ^~
+%Warning-PINMISSING: /openlane/designs/Lab4/src/top.v:23:9: Cell has missing pin: 'A'
+   23 |     alu ALU (
+      |         ^~~
+%Warning-PINMISSING: /openlane/designs/Lab4/src/top.v:23:9: Cell has missing pin: 'B'
+   23 |     alu ALU (
+      |         ^~~
+%Error-PINNOTFOUND: /openlane/designs/Lab4/src/top.v:13:10: Pin not found: 'CLK'
+   13 |         .CLK(CLK),
+      |          ^~~
+%Error-PINNOTFOUND: /openlane/designs/Lab4/src/top.v:25:10: Pin not found: 'a'
+   25 |         .a(RD1),
+      |          ^
+%Error-PINNOTFOUND: /openlane/designs/Lab4/src/top.v:26:10: Pin not found: 'b'
+   26 |         .b(RD2),
+      |          ^
+%Error: Exiting due to 3 error(s)

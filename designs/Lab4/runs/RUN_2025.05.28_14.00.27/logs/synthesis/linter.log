@@ -1,0 +1,13 @@
+%Warning-EOFNEWLINE: /openlane/designs/Lab4/src/register_file.v:19:2: Missing newline at end of file (POSIX 3.206).
+                                                                    : ... Suggest add newline.
+   19 |  
+      |  ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.018
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Error: /openlane/designs/Lab4/src/alu.v:10:20: Can't find definition of variable: 'A'
+   10 |    2'b00: result = A + B;
+      |                    ^
+%Error: /openlane/designs/Lab4/src/alu.v:10:24: Can't find definition of variable: 'B'
+   10 |    2'b00: result = A + B;
+      |                        ^
+%Error: Exiting due to 2 error(s)

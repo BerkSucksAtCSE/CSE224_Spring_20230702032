@@ -1,0 +1,11 @@
+{
+    "//": "twoscomp design basic config",
+    "DESIGN_NAME": "twoscomp",
+    "VERILOG_FILES": "dir::src/2scomp.v",
+    "CLOCK_TREE_SYNTH": false,
+    "CLOCK_PORT": null,
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 150 150",
+    "PL_TARGET_DENSITY": 0.75
+}
