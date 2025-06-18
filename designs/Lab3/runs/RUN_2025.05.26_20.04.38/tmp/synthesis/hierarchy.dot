@@ -1,0 +1,25 @@
+digraph "ZeroToFiveCounter" {
+label="ZeroToFiveCounter";
+rankdir="LR";
+remincross=true;
+n4 [ shape=octagon, label="count", color="black", fontcolor="black" ];
+n5 [ shape=octagon, label="rst", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="clk", color="black", fontcolor="black" ];
+v0 [ label="1" ];
+c10 [ shape=record, label="{{<p7> A|<p8> B}|$3\n$add|{<p9> Y}}",  ];
+v1 [ label="4" ];
+c11 [ shape=record, label="{{<p7> A|<p8> B}|$2\n$eq|{<p9> Y}}",  ];
+x3 [ shape=record, style=rounded, label="<s0> 3:0 - 3:0 ", color="black", fontcolor="black" ];
+p2 [shape=box, style=rounded, label="PROC $1\n/openlane/designs/Lab3/src/main.v:9.1-16.4", ];
+c10:p9:e -> x3:s0:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c11:p9:e -> p2:w [color="black", fontcolor="black", label=""];
+p2:e -> n4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> c10:p7:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> c11:p7:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n4:e -> p2:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n5:e -> p2:w [color="black", fontcolor="black", label=""];
+n6:e -> p2:w [color="black", fontcolor="black", label=""];
+v0:e -> c10:p8:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+v1:e -> c11:p8:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+x3:e -> p2:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+}

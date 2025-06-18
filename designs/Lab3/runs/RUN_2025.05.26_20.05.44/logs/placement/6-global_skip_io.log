@@ -1,0 +1,47 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+define_corners Typical
+read_liberty -corner Typical /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+[INFO]: Reading ODB at '/openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/results/floorplan/ZeroToFiveCounter.odb'…
+Reading design constraints file at '/openlane/scripts/base.sdc'…
+[INFO]: Setting output delay to: 2.0
+[INFO]: Setting input delay to: 2.0
+[INFO]: Setting load to: 0.033442
+[INFO]: Setting clock uncertainty to: 0.25
+[INFO]: Setting clock transition to: 0.15
+[INFO]: Setting timing derate to: 5.0 %
+[INFO]: Setting RC values...
+[INFO]: Setting signal min routing layer to: met1 and clock min routing layer to met3. 
+[INFO]: Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+[WARNING GPL-0150] -skip_io will disable timing driven mode.
+[WARNING GPL-0151] -skip_io will disable routability driven mode.
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  5.520 10.880 ) ( 25.760 29.920 ) um
+[INFO GPL-0006] NumInstances:                35
+[INFO GPL-0007] NumPlaceInstances:           17
+[INFO GPL-0008] NumFixedInstances:           18
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                     19
+[INFO GPL-0011] NumPins:                     54
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 31.300 42.020 ) um
+[INFO GPL-0013] CoreBBox: (  5.520 10.880 ) ( 25.760 29.920 ) um
+[INFO GPL-0016] CoreArea:               385.370 um^2
+[INFO GPL-0017] NonPlaceInstsArea:       57.555 um^2
+[INFO GPL-0018] PlaceInstsArea:         205.197 um^2
+[INFO GPL-0019] Util:                    62.595 %
+[INFO GPL-0020] StdInstsArea:           205.197 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[ERROR GPL-0302] Use a higher -density or re-floorplan with a larger core area.
+Given target density: 0.60
+Suggested target density: 0.63
+Error: gpl.tcl, 75 GPL-0302

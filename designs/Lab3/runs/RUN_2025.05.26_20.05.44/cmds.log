@@ -1,0 +1,70 @@
+Mon May 26 20:05:45 +0000 2025 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/layers.list /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef}"
+
+Mon May 26 20:05:45 +0000 2025 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/merged.nom.lef -i /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Mon May 26 20:05:45 +0000 2025 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/merged.min.lef -i /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Mon May 26 20:05:45 +0000 2025 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/merged.max.lef -i /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef} |& tee /dev/null}"
+
+Mon May 26 20:05:45 +0000 2025 - Executing "{python3 /openlane/scripts/mergeLib.py --output /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/synthesis/merged.lib --name sky130A_merged /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Mon May 26 20:05:45 +0000 2025 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/synthesis/trimmed.lib.exclude.list --output /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/synthesis/trimmed.lib /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/synthesis/merged.lib}"
+
+Mon May 26 20:05:46 +0000 2025 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/cts/cts.lib.exclude.list --output /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/cts/cts.lib /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Mon May 26 20:05:46 +0000 2025 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/cts/cts-fastest.lib.exclude.list --output /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/cts/cts-fastest.lib /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib}"
+
+Mon May 26 20:05:46 +0000 2025 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/cts/cts-slowest.lib.exclude.list --output /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/cts/cts-slowest.lib /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib}"
+
+Mon May 26 20:05:46 +0000 2025 - Executing "{python3 /openlane/scripts/new_tracks.py -i /home/berks/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/routing/config.tracks}"
+
+Mon May 26 20:05:46 +0000 2025 - Executing "{echo {OpenLane e73fb3c57e687a0023fcd4dcfd1566ecd478362a} > /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/OPENLANE_COMMIT}"
+
+Mon May 26 20:05:46 +0000 2025 - Executing "{yosys -c /openlane/scripts/yosys/blackbox.tcl}"
+
+Mon May 26 20:05:47 +0000 2025 - Executing "{verilator -Wall --lint-only --Wno-DECLFILENAME --top-module ZeroToFiveCounter /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/synthesis/blackbox/sky130_fd_sc_hd__blackbox.v /openlane/designs/Lab3/src/main.v -Wno-fatal --relative-includes |& tee /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/synthesis/linter.log /dev/null}"
+
+Mon May 26 20:05:47 +0000 2025 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/synthesis/1-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib}"
+
+Mon May 26 20:05:47 +0000 2025 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/synthesis/trimmed.lib > /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/synthesis/1-trimmed.no_pg.lib}"
+
+Mon May 26 20:05:47 +0000 2025 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/synthesis/1-synthesis.log"
+
+Mon May 26 20:05:47 +0000 2025 - Executing "{yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/synthesis/1-synthesis.log}"
+
+Mon May 26 20:05:47 +0000 2025 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/Lab3\/runs\/RUN_2025.05.26_20.05.44\/results\/synthesis\/ZeroToFiveCounter.v/} /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/config.tcl}"
+
+Mon May 26 20:05:47 +0000 2025 - Executing "{sed -i.bak /defparam/d /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/results/synthesis/ZeroToFiveCounter.v}"
+
+Mon May 26 20:05:48 +0000 2025 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/synthesis/2-sta.log"
+
+Mon May 26 20:05:48 +0000 2025 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/synthesis/2-sta.log}"
+
+Mon May 26 20:05:48 +0000 2025 - Executing "openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/floorplan/3-initial_fp.log"
+
+Mon May 26 20:05:48 +0000 2025 - Executing "{openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/floorplan/3-initial_fp.log}"
+
+Mon May 26 20:05:48 +0000 2025 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/snap_to_grid.py --output /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/floorplan/3-minimized_pdn.txt --input-lef /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/merged.nom.lef 2.5300000000000002 2.38 5.0600000000000005 4.76}"
+
+Mon May 26 20:05:49 +0000 2025 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/defutil.py extract_core_dims --output-data /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/dimensions.txt --input-lef /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/merged.nom.lef /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/tmp/floorplan/3-initial_fp.def}"
+
+Mon May 26 20:05:49 +0000 2025 - Executing "openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/floorplan/4-io.log"
+
+Mon May 26 20:05:49 +0000 2025 - Executing "{openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/floorplan/4-io.log}"
+
+Mon May 26 20:05:52 +0000 2025 - Executing "openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/floorplan/5-tap.log"
+
+Mon May 26 20:05:52 +0000 2025 - Executing "{openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/floorplan/5-tap.log}"
+
+Mon May 26 20:05:52 +0000 2025 - Executing "openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/floorplan/6-pdn.log"
+
+Mon May 26 20:05:52 +0000 2025 - Executing "{openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/floorplan/6-pdn.log}"
+
+Mon May 26 20:05:52 +0000 2025 - Executing "openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/placement/6-global_skip_io.log"
+
+Mon May 26 20:05:52 +0000 2025 - Executing "{openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/logs/placement/6-global_skip_io.log}"
+
+Mon May 26 20:05:53 +0000 2025 - Executing "{python3 /openlane/scripts/write_runtime.py --conclude --seconds --time-in 1748289953 {flow failed}}"
+
+Mon May 26 20:05:53 +0000 2025 - Executing "{python3 /openlane/scripts/generate_reports.py -d /openlane/designs/Lab3 --design_name ZeroToFiveCounter --tag RUN_2025.05.26_20.05.44 --output_file /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/reports/metrics.csv --man_report /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44/reports/manufacturability.rpt --run_path /openlane/designs/Lab3/runs/RUN_2025.05.26_20.05.44}"
+
