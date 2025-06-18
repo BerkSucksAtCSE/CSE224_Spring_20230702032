@@ -1,0 +1,18 @@
+%Warning-EOFNEWLINE: /openlane/designs/Lab6/src/seven_segment_display.v:44:10: Missing newline at end of file (POSIX 3.206).
+                                                                             : ... Suggest add newline.
+   44 | endmodule
+      |          ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.018
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /openlane/designs/Lab6/src/pc_counter.v:18:20: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's VARREF 'target' generates 5 bits.
+                                                                   : ... note: In instance 'semi_cpu_top.PC0'
+   18 |                 pc <= target;
+      |                    ^~
+%Warning-WIDTHEXPAND: /openlane/designs/Lab6/src/pc_counter.v:20:20: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's VARREF 'target' generates 5 bits.
+                                                                   : ... note: In instance 'semi_cpu_top.PC0'
+   20 |                 pc <= target;
+      |                    ^~
+%Warning-UNUSEDSIGNAL: /openlane/designs/Lab6/src/instr_decoder.v:3:24: Bits of signal are not used: 'instr'[13:0]
+                                                                      : ... note: In instance 'semi_cpu_top.DEC0'
+    3 |     input  wire [31:0] instr,
+      |                        ^~~~~

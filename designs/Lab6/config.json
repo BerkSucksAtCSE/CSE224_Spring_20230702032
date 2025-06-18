@@ -1,0 +1,14 @@
+{
+  "DESIGN_NAME": "semi_cpu_top",
+  "VERILOG_FILES": [
+    "/openlane/designs/Lab6/src/alu.v",
+    "/openlane/designs/Lab6/src/instr_decoder.v",
+    "/openlane/designs/Lab6/src/instr_mem.v",
+    "/openlane/designs/Lab6/src/pc_counter.v",
+    "/openlane/designs/Lab6/src/reg_file.v",
+    "/openlane/designs/Lab6/src/seven_segment_display.v",
+    "/openlane/designs/Lab6/src/semi_cpu_top.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10
+}

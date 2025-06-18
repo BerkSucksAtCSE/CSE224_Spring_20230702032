@@ -1,0 +1,1753 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/berks/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /openlane/designs/Lab6/src/alu.v
+Parsing SystemVerilog input from `/openlane/designs/Lab6/src/alu.v' to AST representation.
+Storing AST representation for module `$abstract\alu'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /openlane/designs/Lab6/src/instr_decoder.v
+Parsing SystemVerilog input from `/openlane/designs/Lab6/src/instr_decoder.v' to AST representation.
+Storing AST representation for module `$abstract\instr_decoder'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /openlane/designs/Lab6/src/instr_mem.v
+Parsing SystemVerilog input from `/openlane/designs/Lab6/src/instr_mem.v' to AST representation.
+Storing AST representation for module `$abstract\instr_mem'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /openlane/designs/Lab6/src/pc_counter.v
+Parsing SystemVerilog input from `/openlane/designs/Lab6/src/pc_counter.v' to AST representation.
+Storing AST representation for module `$abstract\pc_counter'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /openlane/designs/Lab6/src/reg_file.v
+Parsing SystemVerilog input from `/openlane/designs/Lab6/src/reg_file.v' to AST representation.
+Storing AST representation for module `$abstract\reg_file'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /openlane/designs/Lab6/src/seven_segment_display.v
+Parsing SystemVerilog input from `/openlane/designs/Lab6/src/seven_segment_display.v' to AST representation.
+Storing AST representation for module `$abstract\seven_segment_display'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /openlane/designs/Lab6/src/semi_cpu_top.v
+Parsing SystemVerilog input from `/openlane/designs/Lab6/src/semi_cpu_top.v' to AST representation.
+Storing AST representation for module `$abstract\semi_cpu_top'.
+Successfully finished Verilog frontend.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+10. Executing AST frontend in derive mode using pre-parsed AST for module `\semi_cpu_top'.
+Generating RTLIL representation for module `\semi_cpu_top'.
+
+10.1. Analyzing design hierarchy..
+Top module:  \semi_cpu_top
+
+10.2. Executing AST frontend in derive mode using pre-parsed AST for module `\seven_segment_display'.
+Generating RTLIL representation for module `\seven_segment_display'.
+
+10.3. Executing AST frontend in derive mode using pre-parsed AST for module `\alu'.
+Generating RTLIL representation for module `\alu'.
+
+10.4. Executing AST frontend in derive mode using pre-parsed AST for module `\reg_file'.
+Generating RTLIL representation for module `\reg_file'.
+Warning: Replacing memory \regs with list of registers. See /openlane/designs/Lab6/src/reg_file.v:18
+
+10.5. Executing AST frontend in derive mode using pre-parsed AST for module `\instr_decoder'.
+Generating RTLIL representation for module `\instr_decoder'.
+
+10.6. Executing AST frontend in derive mode using pre-parsed AST for module `\instr_mem'.
+Generating RTLIL representation for module `\instr_mem'.
+
+10.7. Executing AST frontend in derive mode using pre-parsed AST for module `\pc_counter'.
+Generating RTLIL representation for module `\pc_counter'.
+
+10.8. Analyzing design hierarchy..
+Top module:  \semi_cpu_top
+Used module:     \seven_segment_display
+Used module:     \alu
+Used module:     \reg_file
+Used module:     \instr_decoder
+Used module:     \instr_mem
+Used module:     \pc_counter
+
+10.9. Analyzing design hierarchy..
+Top module:  \semi_cpu_top
+Used module:     \seven_segment_display
+Used module:     \alu
+Used module:     \reg_file
+Used module:     \instr_decoder
+Used module:     \instr_mem
+Used module:     \pc_counter
+Removing unused module `$abstract\semi_cpu_top'.
+Removing unused module `$abstract\seven_segment_display'.
+Removing unused module `$abstract\reg_file'.
+Removing unused module `$abstract\pc_counter'.
+Removing unused module `$abstract\instr_mem'.
+Removing unused module `$abstract\instr_decoder'.
+Removing unused module `$abstract\alu'.
+Removed 7 unused modules.
+
+11. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/Lab6/runs/RUN_2025.06.18_00.34.36/tmp/synthesis/hierarchy.dot'.
+Dumping module semi_cpu_top to page 1.
+Renaming module semi_cpu_top to semi_cpu_top.
+
+12. Executing TRIBUF pass.
+
+13. Executing HIERARCHY pass (managing design hierarchy).
+
+13.1. Analyzing design hierarchy..
+Top module:  \semi_cpu_top
+Used module:     \seven_segment_display
+Used module:     \alu
+Used module:     \reg_file
+Used module:     \instr_decoder
+Used module:     \instr_mem
+Used module:     \pc_counter
+
+13.2. Analyzing design hierarchy..
+Top module:  \semi_cpu_top
+Used module:     \seven_segment_display
+Used module:     \alu
+Used module:     \reg_file
+Used module:     \instr_decoder
+Used module:     \instr_mem
+Used module:     \pc_counter
+Removed 0 unused modules.
+
+14. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/Lab6/src/instr_mem.v:20$64 in module instr_mem.
+Removed 1 dead cases from process $proc$/openlane/designs/Lab6/src/reg_file.v:0$48 in module reg_file.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/Lab6/src/reg_file.v:0$48 in module reg_file.
+Removed 1 dead cases from process $proc$/openlane/designs/Lab6/src/reg_file.v:0$45 in module reg_file.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/Lab6/src/reg_file.v:0$45 in module reg_file.
+Removed 1 dead cases from process $proc$/openlane/designs/Lab6/src/reg_file.v:15$24 in module reg_file.
+Marked 4 switch rules as full_case in process $proc$/openlane/designs/Lab6/src/reg_file.v:15$24 in module reg_file.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/Lab6/src/alu.v:8$13 in module alu.
+Removed 1 dead cases from process $proc$/openlane/designs/Lab6/src/seven_segment_display.v:23$11 in module seven_segment_display.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/Lab6/src/seven_segment_display.v:23$11 in module seven_segment_display.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/Lab6/src/seven_segment_display.v:11$9 in module seven_segment_display.
+Marked 3 switch rules as full_case in process $proc$/openlane/designs/Lab6/src/pc_counter.v:13$88 in module pc_counter.
+Removed a total of 4 dead cases.
+
+16. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 25 assignments to connections.
+
+17. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:7$12'.
+  Set init value: \digit_select = 2'00
+
+18. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+Found async reset \reset in `\pc_counter.$proc$/openlane/designs/Lab6/src/pc_counter.v:13$88'.
+
+19. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~11 debug messages>
+
+20. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+Creating decoders for process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:20$64'.
+     1/1: $1\instr[31:0]
+Creating decoders for process `\instr_decoder.$proc$/openlane/designs/Lab6/src/instr_decoder.v:16$51'.
+Creating decoders for process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:0$48'.
+     1/1: $1$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:25$23_DATA[31:0]$50
+Creating decoders for process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:0$45'.
+     1/1: $1$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:24$22_DATA[31:0]$47
+Creating decoders for process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+     1/42: $3$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:21$21_DATA[31:0]$39
+     2/42: $2$mem2reg_wr$\regs$/openlane/designs/Lab6/src/reg_file.v:21$20_ADDR[4:0]$35
+     3/42: $2$mem2reg_wr$\regs$/openlane/designs/Lab6/src/reg_file.v:21$20_DATA[31:0]$36
+     4/42: $2$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:21$21_DATA[31:0]$38
+     5/42: $2$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:21$21_ADDR[4:0]$37
+     6/42: $1$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:21$21_DATA[31:0]$32
+     7/42: $1$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:21$21_ADDR[4:0]$31
+     8/42: $1$mem2reg_wr$\regs$/openlane/designs/Lab6/src/reg_file.v:21$20_DATA[31:0]$30
+     9/42: $1$mem2reg_wr$\regs$/openlane/designs/Lab6/src/reg_file.v:21$20_ADDR[4:0]$29
+    10/42: $1\i[31:0]
+    11/42: $0\regs[31][31:0]
+    12/42: $0\regs[30][31:0]
+    13/42: $0\regs[29][31:0]
+    14/42: $0\regs[28][31:0]
+    15/42: $0\regs[27][31:0]
+    16/42: $0\regs[26][31:0]
+    17/42: $0\regs[25][31:0]
+    18/42: $0\regs[24][31:0]
+    19/42: $0\regs[23][31:0]
+    20/42: $0\regs[22][31:0]
+    21/42: $0\regs[21][31:0]
+    22/42: $0\regs[20][31:0]
+    23/42: $0\regs[19][31:0]
+    24/42: $0\regs[18][31:0]
+    25/42: $0\regs[17][31:0]
+    26/42: $0\regs[16][31:0]
+    27/42: $0\regs[15][31:0]
+    28/42: $0\regs[14][31:0]
+    29/42: $0\regs[13][31:0]
+    30/42: $0\regs[12][31:0]
+    31/42: $0\regs[11][31:0]
+    32/42: $0\regs[10][31:0]
+    33/42: $0\regs[9][31:0]
+    34/42: $0\regs[8][31:0]
+    35/42: $0\regs[7][31:0]
+    36/42: $0\regs[6][31:0]
+    37/42: $0\regs[5][31:0]
+    38/42: $0\regs[4][31:0]
+    39/42: $0\regs[3][31:0]
+    40/42: $0\regs[2][31:0]
+    41/42: $0\regs[1][31:0]
+    42/42: $0\regs[0][31:0]
+Creating decoders for process `\alu.$proc$/openlane/designs/Lab6/src/alu.v:8$13'.
+     1/1: $1\res[31:0]
+Creating decoders for process `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:7$12'.
+Creating decoders for process `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:23$11'.
+     1/1: $1\seg[6:0]
+Creating decoders for process `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:11$9'.
+     1/2: $0\current_digit[3:0]
+     2/2: $0\an[3:0]
+Creating decoders for process `\pc_counter.$proc$/openlane/designs/Lab6/src/pc_counter.v:13$88'.
+     1/1: $0\pc[31:0]
+
+21. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:8$54_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:9$55_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:10$56_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:11$57_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:12$58_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:13$59_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:14$60_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:15$61_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:16$62_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.$memwr$\mem$/openlane/designs/Lab6/src/instr_mem.v:17$63_EN' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+No latch inferred for signal `\instr_mem.\instr' from process `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:20$64'.
+No latch inferred for signal `\instr_decoder.\is_jump' from process `\instr_decoder.$proc$/openlane/designs/Lab6/src/instr_decoder.v:16$51'.
+No latch inferred for signal `\instr_decoder.\is_beq' from process `\instr_decoder.$proc$/openlane/designs/Lab6/src/instr_decoder.v:16$51'.
+No latch inferred for signal `\reg_file.$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:25$23_DATA' from process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:0$48'.
+No latch inferred for signal `\reg_file.$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:24$22_DATA' from process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:0$45'.
+No latch inferred for signal `\alu.\res' from process `\alu.$proc$/openlane/designs/Lab6/src/alu.v:8$13'.
+No latch inferred for signal `\seven_segment_display.\seg' from process `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:23$11'.
+
+22. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\reg_file.\i' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$896' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[0]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$897' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[1]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$898' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[2]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$899' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[3]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$900' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[4]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$901' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[5]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$902' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[6]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$903' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[7]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$904' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[8]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$905' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[9]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$906' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[10]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$907' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[11]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$908' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[12]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$909' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[13]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$910' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[14]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$911' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[15]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$912' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[16]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$913' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[17]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$914' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[18]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$915' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[19]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$916' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[20]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$917' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[21]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$918' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[22]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$919' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[23]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$920' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[24]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$921' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[25]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$922' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[26]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$923' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[27]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$924' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[28]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$925' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[29]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$926' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[30]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$927' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.\regs[31]' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$928' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.$mem2reg_wr$\regs$/openlane/designs/Lab6/src/reg_file.v:21$20_ADDR' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$929' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.$mem2reg_wr$\regs$/openlane/designs/Lab6/src/reg_file.v:21$20_DATA' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$930' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:21$21_ADDR' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$931' with positive edge clock and positive level reset.
+Creating register for signal `\reg_file.$mem2reg_rd$\regs$/openlane/designs/Lab6/src/reg_file.v:21$21_DATA' using process `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+  created $adff cell `$procdff$932' with positive edge clock and positive level reset.
+Creating register for signal `\seven_segment_display.\an' using process `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:11$9'.
+  created $dff cell `$procdff$933' with positive edge clock.
+Creating register for signal `\seven_segment_display.\digit_select' using process `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:11$9'.
+  created $dff cell `$procdff$934' with positive edge clock.
+Creating register for signal `\seven_segment_display.\digits' using process `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:11$9'.
+  created $dff cell `$procdff$935' with positive edge clock.
+Creating register for signal `\seven_segment_display.\current_digit' using process `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:11$9'.
+  created $dff cell `$procdff$936' with positive edge clock.
+Creating register for signal `\pc_counter.\pc' using process `\pc_counter.$proc$/openlane/designs/Lab6/src/pc_counter.v:13$88'.
+  created $adff cell `$procdff$937' with positive edge clock and positive level reset.
+
+23. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+24. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:0$77'.
+Found and cleaned up 1 empty switch in `\instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:20$64'.
+Removing empty process `instr_mem.$proc$/openlane/designs/Lab6/src/instr_mem.v:20$64'.
+Removing empty process `instr_decoder.$proc$/openlane/designs/Lab6/src/instr_decoder.v:16$51'.
+Found and cleaned up 1 empty switch in `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:0$48'.
+Removing empty process `reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:0$48'.
+Found and cleaned up 1 empty switch in `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:0$45'.
+Removing empty process `reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:0$45'.
+Found and cleaned up 3 empty switches in `\reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+Removing empty process `reg_file.$proc$/openlane/designs/Lab6/src/reg_file.v:15$24'.
+Found and cleaned up 1 empty switch in `\alu.$proc$/openlane/designs/Lab6/src/alu.v:8$13'.
+Removing empty process `alu.$proc$/openlane/designs/Lab6/src/alu.v:8$13'.
+Removing empty process `seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:7$12'.
+Found and cleaned up 1 empty switch in `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:23$11'.
+Removing empty process `seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:23$11'.
+Found and cleaned up 1 empty switch in `\seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:11$9'.
+Removing empty process `seven_segment_display.$proc$/openlane/designs/Lab6/src/seven_segment_display.v:11$9'.
+Found and cleaned up 3 empty switches in `\pc_counter.$proc$/openlane/designs/Lab6/src/pc_counter.v:13$88'.
+Removing empty process `pc_counter.$proc$/openlane/designs/Lab6/src/pc_counter.v:13$88'.
+Cleaned up 12 empty switches.
+
+25. Executing CHECK pass (checking for obvious problems).
+Checking module semi_cpu_top...
+Checking module instr_mem...
+Checking module instr_decoder...
+Checking module reg_file...
+Checking module alu...
+Checking module seven_segment_display...
+Checking module pc_counter...
+Found and reported 0 problems.
+
+26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+<suppressed ~1 debug messages>
+Optimizing module instr_mem.
+Optimizing module instr_decoder.
+<suppressed ~1 debug messages>
+Optimizing module reg_file.
+<suppressed ~7 debug messages>
+Optimizing module alu.
+Optimizing module seven_segment_display.
+<suppressed ~2 debug messages>
+Optimizing module pc_counter.
+
+27. Executing FLATTEN pass (flatten design).
+Deleting now unused module instr_mem.
+Deleting now unused module instr_decoder.
+Deleting now unused module reg_file.
+Deleting now unused module alu.
+Deleting now unused module seven_segment_display.
+Deleting now unused module pc_counter.
+<suppressed ~6 debug messages>
+
+28. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 9 unused cells and 148 unused wires.
+<suppressed ~11 debug messages>
+
+30. Executing OPT pass (performing simple optimizations).
+
+30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+<suppressed ~120 debug messages>
+Removed a total of 40 cells.
+
+30.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 32/33 on $pmux $flatten\RF0.$procmux$132.
+    dead port 32/33 on $pmux $flatten\RF0.$procmux$99.
+Removed 2 multiplexer ports.
+<suppressed ~41 debug messages>
+
+30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 0 changes.
+
+30.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+30.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+30.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 0 unused cells and 40 unused wires.
+<suppressed ~1 debug messages>
+
+30.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+30.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+30.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+30.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 0 changes.
+
+30.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+30.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+30.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+
+30.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+30.16. Finished OPT passes. (There is nothing left to do.)
+
+31. Executing FSM pass (extract and optimize FSM).
+
+31.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking semi_cpu_top.disp.an as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+
+31.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+31.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+31.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+
+31.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+31.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+31.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+31.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+32. Executing OPT pass (performing simple optimizations).
+
+32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+32.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+32.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 0 changes.
+
+32.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+32.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\RF0.$procdff$928 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[31]).
+Adding EN signal on $flatten\RF0.$procdff$927 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[30]).
+Adding EN signal on $flatten\RF0.$procdff$926 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[29]).
+Adding EN signal on $flatten\RF0.$procdff$925 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[28]).
+Adding EN signal on $flatten\RF0.$procdff$924 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[27]).
+Adding EN signal on $flatten\RF0.$procdff$923 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[26]).
+Adding EN signal on $flatten\RF0.$procdff$922 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[25]).
+Adding EN signal on $flatten\RF0.$procdff$921 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[24]).
+Adding EN signal on $flatten\RF0.$procdff$920 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[23]).
+Adding EN signal on $flatten\RF0.$procdff$919 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[22]).
+Adding EN signal on $flatten\RF0.$procdff$918 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[21]).
+Adding EN signal on $flatten\RF0.$procdff$917 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[20]).
+Adding EN signal on $flatten\RF0.$procdff$916 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[19]).
+Adding EN signal on $flatten\RF0.$procdff$915 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[18]).
+Adding EN signal on $flatten\RF0.$procdff$914 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[17]).
+Adding EN signal on $flatten\RF0.$procdff$913 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[16]).
+Adding EN signal on $flatten\RF0.$procdff$912 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[15]).
+Adding EN signal on $flatten\RF0.$procdff$911 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[14]).
+Adding EN signal on $flatten\RF0.$procdff$910 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[13]).
+Adding EN signal on $flatten\RF0.$procdff$909 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[12]).
+Adding EN signal on $flatten\RF0.$procdff$908 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[11]).
+Adding EN signal on $flatten\RF0.$procdff$907 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[10]).
+Adding EN signal on $flatten\RF0.$procdff$906 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[9]).
+Adding EN signal on $flatten\RF0.$procdff$905 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[8]).
+Adding EN signal on $flatten\RF0.$procdff$904 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[7]).
+Adding EN signal on $flatten\RF0.$procdff$903 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[6]).
+Adding EN signal on $flatten\RF0.$procdff$902 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[5]).
+Adding EN signal on $flatten\RF0.$procdff$901 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[4]).
+Adding EN signal on $flatten\RF0.$procdff$900 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[3]).
+Adding EN signal on $flatten\RF0.$procdff$899 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[2]).
+Adding EN signal on $flatten\RF0.$procdff$898 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[1]).
+Adding EN signal on $flatten\RF0.$procdff$897 ($adff) from module semi_cpu_top (D = $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40_Y, Q = \RF0.regs[0]).
+Adding EN signal on $flatten\PC0.$procdff$937 ($adff) from module semi_cpu_top (D = $flatten\PC0.$procmux$892_Y, Q = \PC0.pc).
+
+32.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 65 unused cells and 65 unused wires.
+<suppressed ~66 debug messages>
+
+32.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+32.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+32.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+32.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 0 changes.
+
+32.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+32.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+32.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+
+32.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+32.16. Finished OPT passes. (There is nothing left to do.)
+
+33. Executing WREDUCE pass (reducing word size of cells).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:10$69 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:11$70 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:12$71 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:13$72 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:14$73 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:15$74 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:16$75 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:17$76 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:8$67 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\IM0.$meminit$\mem$/openlane/designs/Lab6/src/instr_mem.v:9$68 (IM0.mem).
+Removed top 28 address bits (of 32) from memory read port semi_cpu_top.$flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66 (IM0.mem).
+Removed top 28 address bits (of 32) from memory init port semi_cpu_top.$flatten\disp.$auto$mem.cc:328:emit$95 ($flatten\disp.$auto$proc_rom.cc:150:do_switch$93).
+Removed top 2 bits (of 3) from port B of cell semi_cpu_top.$ne$/openlane/designs/Lab6/src/semi_cpu_top.v:16$6 ($ne).
+Removed top 31 bits (of 32) from port B of cell semi_cpu_top.$flatten\PC0.$add$/openlane/designs/Lab6/src/pc_counter.v:22$91 ($add).
+Removed top 28 bits (of 32) from port B of cell semi_cpu_top.$flatten\IM0.$lt$/openlane/designs/Lab6/src/instr_mem.v:21$65 ($lt).
+Removed top 2 bits (of 3) from port B of cell semi_cpu_top.$flatten\DEC0.$eq$/openlane/designs/Lab6/src/instr_decoder.v:18$53 ($eq).
+Removed top 4 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$197_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$196_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$195_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$194_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$193_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$192_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$191_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$190_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$189_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$188_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$187_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$186_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$185_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$184_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$183_CMP0 ($eq).
+Removed top 4 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$163_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$162_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$161_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$160_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$159_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$158_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$157_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$156_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$155_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$154_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$153_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$152_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$151_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$150_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$149_CMP0 ($eq).
+Removed top 4 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$130_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$129_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$128_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$127_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$126_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$125_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$124_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$123_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$122_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$121_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$120_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$119_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$118_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$117_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell semi_cpu_top.$flatten\RF0.$procmux$116_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell semi_cpu_top.$flatten\ALU0.$procmux$876_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell semi_cpu_top.$flatten\ALU0.$procmux$875_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell semi_cpu_top.$flatten\disp.$procmux$881_CMP0 ($eq).
+Removed top 31 bits (of 32) from port B of cell semi_cpu_top.$flatten\disp.$add$/openlane/designs/Lab6/src/seven_segment_display.v:12$10 ($add).
+Removed top 30 bits (of 32) from port Y of cell semi_cpu_top.$flatten\disp.$add$/openlane/designs/Lab6/src/seven_segment_display.v:12$10 ($add).
+
+34. Executing PEEPOPT pass (run peephole optimizers).
+
+35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+36. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module semi_cpu_top:
+  creating $macc model for $flatten\ALU0.$add$/openlane/designs/Lab6/src/alu.v:10$14 ($add).
+  creating $macc model for $flatten\ALU0.$add$/openlane/designs/Lab6/src/alu.v:14$18 ($add).
+  creating $macc model for $flatten\ALU0.$sub$/openlane/designs/Lab6/src/alu.v:11$15 ($sub).
+  creating $macc model for $flatten\ALU0.$sub$/openlane/designs/Lab6/src/alu.v:15$19 ($sub).
+  creating $macc model for $flatten\PC0.$add$/openlane/designs/Lab6/src/pc_counter.v:22$91 ($add).
+  creating $macc model for $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40 ($add).
+  creating $macc model for $flatten\disp.$add$/openlane/designs/Lab6/src/seven_segment_display.v:12$10 ($add).
+  creating $alu model for $macc $flatten\disp.$add$/openlane/designs/Lab6/src/seven_segment_display.v:12$10.
+  creating $alu model for $macc $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40.
+  creating $alu model for $macc $flatten\PC0.$add$/openlane/designs/Lab6/src/pc_counter.v:22$91.
+  creating $alu model for $macc $flatten\ALU0.$sub$/openlane/designs/Lab6/src/alu.v:15$19.
+  creating $alu model for $macc $flatten\ALU0.$sub$/openlane/designs/Lab6/src/alu.v:11$15.
+  creating $alu model for $macc $flatten\ALU0.$add$/openlane/designs/Lab6/src/alu.v:14$18.
+  creating $alu model for $macc $flatten\ALU0.$add$/openlane/designs/Lab6/src/alu.v:10$14.
+  creating $alu model for $flatten\IM0.$lt$/openlane/designs/Lab6/src/instr_mem.v:21$65 ($lt): new $alu
+  creating $alu cell for $flatten\IM0.$lt$/openlane/designs/Lab6/src/instr_mem.v:21$65: $auto$alumacc.cc:485:replace_alu$1036
+  creating $alu cell for $flatten\ALU0.$add$/openlane/designs/Lab6/src/alu.v:10$14: $auto$alumacc.cc:485:replace_alu$1047
+  creating $alu cell for $flatten\ALU0.$sub$/openlane/designs/Lab6/src/alu.v:11$15: $auto$alumacc.cc:485:replace_alu$1050
+  creating $alu cell for $flatten\ALU0.$add$/openlane/designs/Lab6/src/alu.v:14$18: $auto$alumacc.cc:485:replace_alu$1053
+  creating $alu cell for $flatten\ALU0.$sub$/openlane/designs/Lab6/src/alu.v:15$19: $auto$alumacc.cc:485:replace_alu$1056
+  creating $alu cell for $flatten\PC0.$add$/openlane/designs/Lab6/src/pc_counter.v:22$91: $auto$alumacc.cc:485:replace_alu$1059
+  creating $alu cell for $flatten\RF0.$add$/openlane/designs/Lab6/src/reg_file.v:21$40: $auto$alumacc.cc:485:replace_alu$1062
+  creating $alu cell for $flatten\disp.$add$/openlane/designs/Lab6/src/seven_segment_display.v:12$10: $auto$alumacc.cc:485:replace_alu$1065
+  created 8 $alu and 0 $macc cells.
+
+37. Executing SHARE pass (SAT-based resource sharing).
+Found 3 cells in module semi_cpu_top that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66 ($memrd):
+    Found 1 activation_patterns using ctrl signal $auto$rtlil.cc:2476:Not$1046.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\ALU0.$shr$/openlane/designs/Lab6/src/alu.v:13$17 ($shr):
+    Found 1 activation_patterns using ctrl signal $flatten\ALU0.$procmux$873_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\ALU0.$shl$/openlane/designs/Lab6/src/alu.v:12$16 ($shl):
+    Found 1 activation_patterns using ctrl signal $flatten\ALU0.$procmux$874_CMP.
+    No candidates found.
+
+38. Executing OPT pass (performing simple optimizations).
+
+38.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+<suppressed ~1 debug messages>
+
+38.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+38.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+38.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 0 changes.
+
+38.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+38.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+38.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 1 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+38.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+38.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+38.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 0 changes.
+
+38.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+38.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+38.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+
+38.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+38.16. Finished OPT passes. (There is nothing left to do.)
+
+39. Executing MEMORY pass.
+
+39.1. Executing OPT_MEM pass (optimize memories).
+semi_cpu_top.IM0.mem: removing const-0 lane 0
+semi_cpu_top.IM0.mem: removing const-0 lane 1
+semi_cpu_top.IM0.mem: removing const-0 lane 2
+semi_cpu_top.IM0.mem: removing const-0 lane 3
+semi_cpu_top.IM0.mem: removing const-0 lane 4
+semi_cpu_top.IM0.mem: removing const-0 lane 5
+semi_cpu_top.IM0.mem: removing const-0 lane 6
+semi_cpu_top.IM0.mem: removing const-0 lane 7
+semi_cpu_top.IM0.mem: removing const-0 lane 8
+semi_cpu_top.IM0.mem: removing const-0 lane 9
+semi_cpu_top.IM0.mem: removing const-0 lane 10
+semi_cpu_top.IM0.mem: removing const-0 lane 11
+semi_cpu_top.IM0.mem: removing const-0 lane 12
+semi_cpu_top.IM0.mem: removing const-0 lane 13
+semi_cpu_top.IM0.mem: removing const-0 lane 18
+Performed a total of 1 transformations.
+
+39.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+39.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+39.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+39.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$flatten\disp.$auto$proc_rom.cc:150:do_switch$93'[0] in module `\semi_cpu_top': no output FF found.
+Checking read port `\IM0.mem'[0] in module `\semi_cpu_top': no output FF found.
+Checking read port address `$flatten\disp.$auto$proc_rom.cc:150:do_switch$93'[0] in module `\semi_cpu_top': merged address FF to cell.
+Checking read port address `\IM0.mem'[0] in module `\semi_cpu_top': address FF has async set and/or reset, not supported.
+
+39.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+39.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+39.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+39.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+
+39.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+40. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+
+41. Executing OPT pass (performing simple optimizations).
+
+41.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+<suppressed ~6 debug messages>
+
+41.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+41.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+41.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 3 unused cells and 4 unused wires.
+<suppressed ~4 debug messages>
+
+41.5. Finished fast OPT passes.
+
+42. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $flatten\disp.$auto$proc_rom.cc:150:do_switch$93 in module \semi_cpu_top:
+  created 16 $dff cells and 0 static cells of width 7.
+Extracted data FF from read port 0 of semi_cpu_top.$flatten\disp.$auto$proc_rom.cc:150:do_switch$93: $$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdreg[0]
+  read interface: 1 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory \IM0.mem in module \semi_cpu_top:
+  created 10 $dff cells and 0 static cells of width 17.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+
+43. Executing OPT pass (performing simple optimizations).
+
+43.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+<suppressed ~10 debug messages>
+
+43.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+43.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+43.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][3][2]$1144:
+      Old ports: A=17'00000110011000000, B=17'00100111001000101, Y=$memory\IM0.mem$rdmux[0][2][1]$a$1130
+      New ports: A=2'10, B=2'01, Y={ $memory\IM0.mem$rdmux[0][2][1]$a$1130 [7] $memory\IM0.mem$rdmux[0][2][1]$a$1130 [0] }
+      New connections: { $memory\IM0.mem$rdmux[0][2][1]$a$1130 [16:8] $memory\IM0.mem$rdmux[0][2][1]$a$1130 [6:1] } = { 2'00 $memory\IM0.mem$rdmux[0][2][1]$a$1130 [0] 4'0011 $memory\IM0.mem$rdmux[0][2][1]$a$1130 [0] 5'01000 $memory\IM0.mem$rdmux[0][2][1]$a$1130 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][3][1]$1141:
+      Old ports: A=17'01011001010101111, B=17'11110100110010101, Y=$memory\IM0.mem$rdmux[0][2][0]$b$1128
+      New ports: A=2'01, B=2'10, Y={ $memory\IM0.mem$rdmux[0][2][0]$b$1128 [4] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [1] }
+      New connections: { $memory\IM0.mem$rdmux[0][2][0]$b$1128 [16:5] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [3:2] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [0] } = { $memory\IM0.mem$rdmux[0][2][0]$b$1128 [4] 1'1 $memory\IM0.mem$rdmux[0][2][0]$b$1128 [4] 1'1 $memory\IM0.mem$rdmux[0][2][0]$b$1128 [1] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [4] 1'0 $memory\IM0.mem$rdmux[0][2][0]$b$1128 [1] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [4] 2'10 $memory\IM0.mem$rdmux[0][2][0]$b$1128 [1] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [1] 2'11 }
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][3][0]$1138:
+      Old ports: A=17'11001010000001010, B=17'11001111000001111, Y=$memory\IM0.mem$rdmux[0][2][0]$a$1127
+      New ports: A=1'0, B=1'1, Y=$memory\IM0.mem$rdmux[0][2][0]$a$1127 [0]
+      New connections: $memory\IM0.mem$rdmux[0][2][0]$a$1127 [16:1] = { 5'11001 $memory\IM0.mem$rdmux[0][2][0]$a$1127 [0] 1'1 $memory\IM0.mem$rdmux[0][2][0]$a$1127 [0] 6'000001 $memory\IM0.mem$rdmux[0][2][0]$a$1127 [0] 1'1 }
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][3][4]$1150:
+      Old ports: A=17'01000110001000101, B=17'00000000000000000, Y=$memory\IM0.mem$rdmux[0][2][2]$a$1133
+      New ports: A=1'1, B=1'0, Y=$memory\IM0.mem$rdmux[0][2][2]$a$1133 [0]
+      New connections: $memory\IM0.mem$rdmux[0][2][2]$a$1133 [16:1] = { 1'0 $memory\IM0.mem$rdmux[0][2][2]$a$1133 [0] 3'000 $memory\IM0.mem$rdmux[0][2][2]$a$1133 [0] $memory\IM0.mem$rdmux[0][2][2]$a$1133 [0] 3'000 $memory\IM0.mem$rdmux[0][2][2]$a$1133 [0] 3'000 $memory\IM0.mem$rdmux[0][2][2]$a$1133 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][3][6]$1111:
+      Old ports: A=7'1000110, B=7'0100001, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$a$1091
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$a$1091 [1:0]
+      New connections: $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$a$1091 [6:2] = { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$a$1091 [1:0] 2'00 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$a$1091 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][3][5]$1108:
+      Old ports: A=7'0001000, B=7'0000011, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089 [0] }
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089 [6:4] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089 [2:1] } = { 4'0000 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][3][4]$1105:
+      Old ports: A=7'0000000, B=7'0011000, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$a$1088
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$a$1088 [3]
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$a$1088 [6:4] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$a$1088 [2:0] } = { 2'00 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$a$1088 [3] 3'000 }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][3][3]$1102:
+      Old ports: A=7'0000010, B=7'1111000, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [1] }
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [6:4] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [2] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [0] } = { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [3] 2'00 }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][3][2]$1099:
+      Old ports: A=7'0011001, B=7'0010010, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$a$1085
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$a$1085 [1:0]
+      New connections: $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$a$1085 [6:2] = { 3'001 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$a$1085 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][3][1]$1096:
+      Old ports: A=7'0100100, B=7'0110000, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083 [4] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083 [2] }
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083 [6:5] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083 [1:0] } = 5'01000
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][3][0]$1093:
+      Old ports: A=7'1000000, B=7'1111001, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082 [0]
+      New connections: $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082 [6:1] = { 1'1 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082 [0] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082 [0] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082 [0] 2'00 }
+    Consolidated identical input bits for $mux cell $flatten\IM0.$procmux$97:
+      Old ports: A={ $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [31:19] 1'0 $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [17:14] 14'00000000000000 }, B=0, Y=\DEC0.instr
+      New ports: A={ $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [31:19] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [17:14] }, B=17'00000000000000000, Y={ \DEC0.instr [31:19] \DEC0.instr [17:14] }
+      New connections: { \DEC0.instr [18] \DEC0.instr [13:0] } = 15'000000000000000
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][3][7]$1114:
+      Old ports: A=7'0000110, B=7'0001110, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$b$1092
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$b$1092 [3]
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$b$1092 [6:4] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$b$1092 [2:0] } = 6'000110
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][3][3]$1147:
+      Old ports: A=17'11000100000000010, B=17'01000101001000100, Y=$memory\IM0.mem$rdmux[0][2][1]$b$1131
+      New ports: A=2'01, B=2'10, Y=$memory\IM0.mem$rdmux[0][2][1]$b$1131 [2:1]
+      New connections: { $memory\IM0.mem$rdmux[0][2][1]$b$1131 [16:3] $memory\IM0.mem$rdmux[0][2][1]$b$1131 [0] } = { $memory\IM0.mem$rdmux[0][2][1]$b$1131 [1] 6'100010 $memory\IM0.mem$rdmux[0][2][1]$b$1131 [2] 2'00 $memory\IM0.mem$rdmux[0][2][1]$b$1131 [2] 4'0000 }
+  Optimizing cells in module \semi_cpu_top.
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][2][2]$1132:
+      Old ports: A=$memory\IM0.mem$rdmux[0][2][2]$a$1133, B=17'x, Y=$memory\IM0.mem$rdmux[0][1][1]$a$1124
+      New ports: A={ 1'0 $memory\IM0.mem$rdmux[0][2][2]$a$1133 [0] }, B=2'x, Y=$memory\IM0.mem$rdmux[0][1][1]$a$1124 [1:0]
+      New connections: $memory\IM0.mem$rdmux[0][1][1]$a$1124 [16:2] = { $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1:0] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1:0] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [0] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1:0] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1] $memory\IM0.mem$rdmux[0][1][1]$a$1124 [1:0] }
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][2][1]$1129:
+      Old ports: A=$memory\IM0.mem$rdmux[0][2][1]$a$1130, B=$memory\IM0.mem$rdmux[0][2][1]$b$1131, Y=$memory\IM0.mem$rdmux[0][1][0]$b$1122
+      New ports: A={ 2'01 $memory\IM0.mem$rdmux[0][2][1]$a$1130 [7] 1'1 $memory\IM0.mem$rdmux[0][2][1]$a$1130 [0] 1'0 $memory\IM0.mem$rdmux[0][2][1]$a$1130 [0] }, B={ 3'100 $memory\IM0.mem$rdmux[0][2][1]$b$1131 [2] $memory\IM0.mem$rdmux[0][2][1]$b$1131 [2:1] 1'0 }, Y={ $memory\IM0.mem$rdmux[0][1][0]$b$1122 [15] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [10] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [7:6] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [2:0] }
+      New connections: { $memory\IM0.mem$rdmux[0][1][0]$b$1122 [16] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [14:11] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [9:8] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [5:3] } = { $memory\IM0.mem$rdmux[0][1][0]$b$1122 [1:0] 3'001 $memory\IM0.mem$rdmux[0][1][0]$b$1122 [2] 4'0000 }
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][2][0]$1126:
+      Old ports: A=$memory\IM0.mem$rdmux[0][2][0]$a$1127, B=$memory\IM0.mem$rdmux[0][2][0]$b$1128, Y=$memory\IM0.mem$rdmux[0][1][0]$a$1121
+      New ports: A={ 1'1 $memory\IM0.mem$rdmux[0][2][0]$a$1127 [0] 1'1 $memory\IM0.mem$rdmux[0][2][0]$a$1127 [0] 4'0001 $memory\IM0.mem$rdmux[0][2][0]$a$1127 [0] }, B={ $memory\IM0.mem$rdmux[0][2][0]$b$1128 [4] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [4] 1'0 $memory\IM0.mem$rdmux[0][2][0]$b$1128 [1] 1'1 $memory\IM0.mem$rdmux[0][2][0]$b$1128 [1] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [4] $memory\IM0.mem$rdmux[0][2][0]$b$1128 [1] 1'1 }, Y={ $memory\IM0.mem$rdmux[0][1][0]$a$1121 [16] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [11:9] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [7] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [5:4] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [1:0] }
+      New connections: { $memory\IM0.mem$rdmux[0][1][0]$a$1121 [15:12] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [8] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [6] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [3:2] } = { 1'1 $memory\IM0.mem$rdmux[0][1][0]$a$1121 [4] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [7] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [1] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [4] 1'0 $memory\IM0.mem$rdmux[0][1][0]$a$1121 [1:0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$1090:
+      Old ports: A=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$a$1091, B=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$b$1092, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$b$1080
+      New ports: A={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$a$1091 [1] 1'0 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$a$1091 [1:0] }, B={ 1'0 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][3]$b$1092 [3] 2'10 }, Y={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$b$1080 [6] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$b$1080 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$b$1080 [1:0] }
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$b$1080 [5:4] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$b$1080 [2] } = { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$b$1080 [0] 1'0 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$b$1080 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$1087:
+      Old ports: A=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$a$1088, B=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$a$1079
+      New ports: A={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$a$1088 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$a$1088 [3] 1'0 }, B={ 1'0 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][2]$b$1089 [0] }, Y={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$a$1079 [4:3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$a$1079 [0] }
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$a$1079 [6:5] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$a$1079 [2:1] } = { 3'000 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][1]$a$1079 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$1084:
+      Old ports: A=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$a$1085, B=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$b$1077
+      New ports: A={ 2'01 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$a$1085 [0] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$a$1085 [1:0] }, B={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][1]$b$1086 [1] 1'0 }, Y={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$b$1077 [5:3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$b$1077 [1:0] }
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$b$1077 [6] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$b$1077 [2] } = { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$b$1077 [5] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$1081:
+      Old ports: A=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082, B=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083, Y=$memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$a$1076
+      New ports: A={ 1'1 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082 [0] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082 [0] 1'0 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$a$1082 [0] }, B={ 2'01 $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083 [4] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][2][0]$b$1083 [2] 1'0 }, Y={ $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$a$1076 [6:4] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$a$1076 [2] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$a$1076 [0] }
+      New connections: { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$a$1076 [3] $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$a$1076 [1] } = { $memory$flatten\disp.$auto$proc_rom.cc:150:do_switch$93$rdmux[0][1][0]$a$1076 [0] 1'0 }
+  Optimizing cells in module \semi_cpu_top.
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][1][1]$1123:
+      Old ports: A=$memory\IM0.mem$rdmux[0][1][1]$a$1124, B=17'x, Y=$memory\IM0.mem$rdmux[0][0][0]$b$1119
+      New ports: A=$memory\IM0.mem$rdmux[0][1][1]$a$1124 [1:0], B=2'x, Y=$memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0]
+      New connections: $memory\IM0.mem$rdmux[0][0][0]$b$1119 [16:2] = { $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] }
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][1][0]$1120:
+      Old ports: A=$memory\IM0.mem$rdmux[0][1][0]$a$1121, B=$memory\IM0.mem$rdmux[0][1][0]$b$1122, Y=$memory\IM0.mem$rdmux[0][0][0]$a$1118
+      New ports: A={ $memory\IM0.mem$rdmux[0][1][0]$a$1121 [16] 1'1 $memory\IM0.mem$rdmux[0][1][0]$a$1121 [4] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [7] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [11:9] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [7] 1'0 $memory\IM0.mem$rdmux[0][1][0]$a$1121 [5:4] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [1:0] $memory\IM0.mem$rdmux[0][1][0]$a$1121 [1:0] }, B={ $memory\IM0.mem$rdmux[0][1][0]$b$1122 [1] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [15] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [0] 2'01 $memory\IM0.mem$rdmux[0][1][0]$b$1122 [10] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [2] $memory\IM0.mem$rdmux[0][1][0]$b$1122 [7:6] 3'000 $memory\IM0.mem$rdmux[0][1][0]$b$1122 [2:0] }, Y={ $memory\IM0.mem$rdmux[0][0][0]$a$1118 [16:13] $memory\IM0.mem$rdmux[0][0][0]$a$1118 [11:9] $memory\IM0.mem$rdmux[0][0][0]$a$1118 [7:0] }
+      New connections: { $memory\IM0.mem$rdmux[0][0][0]$a$1118 [12] $memory\IM0.mem$rdmux[0][0][0]$a$1118 [8] } = { $memory\IM0.mem$rdmux[0][0][0]$a$1118 [3] $memory\IM0.mem$rdmux[0][0][0]$a$1118 [4] }
+  Optimizing cells in module \semi_cpu_top.
+    Consolidated identical input bits for $mux cell $memory\IM0.mem$rdmux[0][0][0]$1117:
+      Old ports: A=$memory\IM0.mem$rdmux[0][0][0]$a$1118, B=$memory\IM0.mem$rdmux[0][0][0]$b$1119, Y={ $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [31:19] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [17:14] }
+      New ports: A={ $memory\IM0.mem$rdmux[0][0][0]$a$1118 [16:13] $memory\IM0.mem$rdmux[0][0][0]$a$1118 [11:9] $memory\IM0.mem$rdmux[0][0][0]$a$1118 [7:0] }, B={ $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] $memory\IM0.mem$rdmux[0][0][0]$b$1119 [1:0] }, Y={ $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [31:28] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [26:24] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [22:19] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [17:14] }
+      New connections: { $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [27] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [23] } = { $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [17] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [19] }
+  Optimizing cells in module \semi_cpu_top.
+    Consolidated identical input bits for $mux cell $flatten\IM0.$procmux$97:
+      Old ports: A={ $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [31:19] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [17:14] }, B=17'00000000000000000, Y={ \DEC0.instr [31:19] \DEC0.instr [17:14] }
+      New ports: A={ $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [31:28] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [26:24] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [22:19] $flatten\IM0.$memrd$\mem$/openlane/designs/Lab6/src/instr_mem.v:22$66_DATA [17:14] }, B=15'000000000000000, Y={ \DEC0.instr [31:28] \DEC0.instr [26:24] \DEC0.instr [22:19] \DEC0.instr [17:14] }
+      New connections: { \DEC0.instr [27] \DEC0.instr [23] } = { \DEC0.instr [17] \DEC0.instr [19] }
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 25 changes.
+
+43.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+43.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $pmux $flatten\ALU0.$procmux$870 in front of them:
+        $auto$alumacc.cc:485:replace_alu$1056
+        $auto$alumacc.cc:485:replace_alu$1053
+        $auto$alumacc.cc:485:replace_alu$1050
+        $auto$alumacc.cc:485:replace_alu$1047
+
+43.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+43.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 0 unused cells and 54 unused wires.
+<suppressed ~1 debug messages>
+
+43.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+<suppressed ~53 debug messages>
+
+43.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+43.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 4/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 6/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 8/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 10/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 12/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 14/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 16/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 17/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 19/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 21/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 23/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 25/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 27/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 29/31 on $pmux $flatten\RF0.$procmux$132.
+    dead port 1/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 2/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 3/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 4/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 5/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 6/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 7/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 8/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 9/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 10/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 11/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 12/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 13/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 14/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 15/31 on $pmux $flatten\RF0.$procmux$99.
+    dead port 16/31 on $pmux $flatten\RF0.$procmux$99.
+Removed 31 multiplexer ports.
+<suppressed ~14 debug messages>
+
+43.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+    New ctrl vector for $pmux cell $flatten\ALU0.$procmux$870: { $flatten\ALU0.$procmux$874_CMP $flatten\ALU0.$procmux$873_CMP $auto$opt_reduce.cc:134:opt_pmux$1172 }
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 1 changes.
+
+43.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+43.14. Executing OPT_SHARE pass.
+
+43.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+43.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 0 unused cells and 35 unused wires.
+<suppressed ~1 debug messages>
+
+43.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+43.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+43.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+43.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 0 changes.
+
+43.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+43.22. Executing OPT_SHARE pass.
+
+43.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+43.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+
+43.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+43.26. Finished OPT passes. (There is nothing left to do.)
+
+44. Executing TECHMAP pass (map to technology primitives).
+
+44.1. Executing Verilog-2005 frontend: /nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+44.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$a7817265ef3ab2ee43da53bbd8a90f6450d412d9\_90_alu for cells of type $alu.
+Using template $paramod$c83925f608704c3fa34790ddcfce9302bdcd7533\_90_pmux for cells of type $pmux.
+Using template $paramod$54d740639e1393b22262823179ff783ea9f17a35\_90_pmux for cells of type $pmux.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_90_alu for cells of type $alu.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$feecc7a0dbd012970970f2858f15e786e251f677\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shr.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$335cfd09f1afa8139c4aafcbbe5f361887b79c5e\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $dff.
+Running "alumacc" on wrapper $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $adffe.
+Using template $paramod$7f1d45a92d0221fa6c256845bf4513df30042923\_90_pmux for cells of type $pmux.
+Using template $paramod$f1fc4bc1d42e857fca43ce0fdd0da6ff25c612c4\_90_pmux for cells of type $pmux.
+Using template $paramod$175e67c02b86e96b1288b9dc100122520d7240d8\_90_alu for cells of type $alu.
+Using template $paramod$6a42b6fefed750f8a1c58eab59479d960557103c\_90_alu for cells of type $alu.
+Using template $paramod$c2e415ef15bc3ccd2723772353a6b450d3d76206\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod$c6baa65225090ac0a120feab1b920965244aa496\_90_alu for cells of type $alu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~2603 debug messages>
+
+45. Executing OPT pass (performing simple optimizations).
+
+45.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+<suppressed ~1238 debug messages>
+
+45.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+<suppressed ~1332 debug messages>
+Removed a total of 444 cells.
+
+45.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+45.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 135 unused cells and 1715 unused wires.
+<suppressed ~139 debug messages>
+
+45.5. Finished fast OPT passes.
+
+46. Executing ABC pass (technology mapping using ABC).
+
+46.1. Extracting gate netlist of module `\semi_cpu_top' to `<abc-temp-dir>/input.blif'..
+Extracted 5965 gates and 7041 wires to a netlist network with 1074 inputs and 141 outputs.
+
+46.1.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+46.1.2. Re-integrating ABC results.
+ABC RESULTS:              NAND cells:       70
+ABC RESULTS:               AND cells:       53
+ABC RESULTS:               NOT cells:      144
+ABC RESULTS:                OR cells:     1903
+ABC RESULTS:               MUX cells:      433
+ABC RESULTS:              XNOR cells:       69
+ABC RESULTS:             ORNOT cells:      136
+ABC RESULTS:               NOR cells:      144
+ABC RESULTS:            ANDNOT cells:     2711
+ABC RESULTS:               XOR cells:      150
+ABC RESULTS:        internal signals:     5826
+ABC RESULTS:           input signals:     1074
+ABC RESULTS:          output signals:      141
+Removing temp directory.
+
+47. Executing OPT pass (performing simple optimizations).
+
+47.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+<suppressed ~9 debug messages>
+
+47.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+<suppressed ~69 debug messages>
+Removed a total of 23 cells.
+
+47.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+47.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 0 unused cells and 2081 unused wires.
+<suppressed ~19 debug messages>
+
+47.5. Finished fast OPT passes.
+
+48. Executing HIERARCHY pass (managing design hierarchy).
+
+48.1. Analyzing design hierarchy..
+Top module:  \semi_cpu_top
+
+48.2. Analyzing design hierarchy..
+Top module:  \semi_cpu_top
+Removed 0 unused modules.
+
+49. Printing statistics.
+
+=== semi_cpu_top ===
+
+   Number of wires:               5787
+   Number of wire bits:           7251
+   Number of public wires:          68
+   Number of public wire bits:    1459
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               6875
+     $_ANDNOT_                    2700
+     $_AND_                         51
+     $_DFFE_PP0P_                 1056
+     $_DFF_P_                       29
+     $_MUX_                        433
+     $_NAND_                        69
+     $_NOR_                        144
+     $_NOT_                        144
+     $_ORNOT_                      134
+     $_OR_                        1896
+     $_XNOR_                        69
+     $_XOR_                        150
+
+50. Executing CHECK pass (checking for obvious problems).
+Checking module semi_cpu_top...
+Found and reported 0 problems.
+
+51. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/Lab6/runs/RUN_2025.06.18_00.34.36/tmp/synthesis/post_techmap.dot'.
+Dumping module semi_cpu_top to page 1.
+
+52. Executing SHARE pass (SAT-based resource sharing).
+
+53. Executing OPT pass (performing simple optimizations).
+
+53.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+53.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+53.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \semi_cpu_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+53.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \semi_cpu_top.
+Performed a total of 0 changes.
+
+53.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\semi_cpu_top'.
+Removed a total of 0 cells.
+
+53.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+53.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+
+53.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module semi_cpu_top.
+
+53.9. Finished OPT passes. (There is nothing left to do.)
+
+54. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 0 unused cells and 27 unused wires.
+<suppressed ~27 debug messages>
+
+55. Printing statistics.
+
+=== semi_cpu_top ===
+
+   Number of wires:               5760
+   Number of wire bits:           6912
+   Number of public wires:          41
+   Number of public wire bits:    1120
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               6875
+     $_ANDNOT_                    2700
+     $_AND_                         51
+     $_DFFE_PP0P_                 1056
+     $_DFF_P_                       29
+     $_MUX_                        433
+     $_NAND_                        69
+     $_NOR_                        144
+     $_NOT_                        144
+     $_ORNOT_                      134
+     $_OR_                        1896
+     $_XNOR_                        69
+     $_XOR_                        150
+
+mapping tbuf
+
+56. Executing TECHMAP pass (map to technology primitives).
+
+56.1. Executing Verilog-2005 frontend: /home/berks/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/berks/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+56.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+57. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+58. Executing TECHMAP pass (map to technology primitives).
+
+58.1. Executing Verilog-2005 frontend: /home/berks/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/berks/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+58.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+59. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+60. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+60.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\semi_cpu_top':
+  mapped 1056 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 29 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+
+61. Printing statistics.
+
+=== semi_cpu_top ===
+
+   Number of wires:               7872
+   Number of wire bits:           9024
+   Number of public wires:          41
+   Number of public wire bits:    1120
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               8987
+     $_ANDNOT_                    2700
+     $_AND_                         51
+     $_MUX_                       1489
+     $_NAND_                        69
+     $_NOR_                        144
+     $_NOT_                       1200
+     $_ORNOT_                      134
+     $_OR_                        1896
+     $_XNOR_                        69
+     $_XOR_                        150
+     sky130_fd_sc_hd__dfrtp_2     1056
+     sky130_fd_sc_hd__dfxtp_2       29
+
+[INFO]: USING STRATEGY AREA 0
+
+62. Executing ABC pass (technology mapping using ABC).
+
+62.1. Extracting gate netlist of module `\semi_cpu_top' to `/tmp/yosys-abc-6laXXi/input.blif'..
+Extracted 7902 gates and 8978 wires to a netlist network with 1076 inputs and 2157 outputs.
+
+62.1.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-6laXXi/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-6laXXi/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-6laXXi/input.blif 
+ABC: + read_lib -w /openlane/designs/Lab6/runs/RUN_2025.06.18_00.34.36/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/Lab6/runs/RUN_2025.06.18_00.34.36/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.04 sec
+ABC: Memory =    9.54 MB. Time =     0.04 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/Lab6/runs/RUN_2025.06.18_00.34.36/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/Lab6/runs/RUN_2025.06.18_00.34.36/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =   4600 ( 69.7 %)   Cap = 16.5 ff ( 14.5 %)   Area =    25795.99 ( 30.2 %)   Delay =  9986.67 ps  (  4.9 %)               
+ABC: Path  0 --       6 : 0    2 pi                        A =   0.00  Df =  11.2   -6.8 ps  S =  21.6 ps  Cin =  0.0 ff  Cout =   3.0 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --    3235 : 4    1 sky130_fd_sc_hd__or4_2    A =   8.76  Df = 660.9 -546.1 ps  S = 106.8 ps  Cin =  1.5 ff  Cout =   4.6 ff  Cmax = 310.4 ff  G =  290  
+ABC: Path  2 --    3239 : 4    2 sky130_fd_sc_hd__nor4_2   A =  12.51  Df = 942.9 -790.3 ps  S = 197.3 ps  Cin =  4.3 ff  Cout =   3.3 ff  Cmax =  64.1 ff  G =   74  
+ABC: Path  3 --    3240 : 1   10 sky130_fd_sc_hd__buf_2    A =   5.00  Df =1148.5 -848.7 ps  S = 114.9 ps  Cin =  1.7 ff  Cout =  21.7 ff  Cmax = 315.9 ff  G = 1220  
+ABC: Path  4 --    3254 : 2    8 sky130_fd_sc_hd__nand2_2  A =   6.26  Df =1260.8 -734.0 ps  S = 130.2 ps  Cin =  4.4 ff  Cout =  22.0 ff  Cmax = 295.7 ff  G =  474  
+ABC: Path  5 --    3277 : 2    1 sky130_fd_sc_hd__or2_2    A =   6.26  Df =1561.6 -639.8 ps  S =  52.6 ps  Cin =  1.5 ff  Cout =   2.5 ff  Cmax = 299.4 ff  G =  165  
+ABC: Path  6 --    3278 : 1   10 sky130_fd_sc_hd__buf_4    A =   7.51  Df =1727.9 -659.4 ps  S =  99.9 ps  Cin =  2.4 ff  Cout =  32.4 ff  Cmax = 561.2 ff  G = 1285  
+ABC: Path  7 --    3972 : 4    6 sky130_fd_sc_hd__a211oi_2 A =  12.51  Df =3480.0-1196.6 ps  S = 414.1 ps  Cin =  4.4 ff  Cout =  20.2 ff  Cmax =  88.8 ff  G =  445  
+ABC: Path  8 --    3974 : 4    3 sky130_fd_sc_hd__o211ai_2 A =  12.51  Df =3669.2-1266.7 ps  S = 198.2 ps  Cin =  4.4 ff  Cout =  10.9 ff  Cmax = 133.7 ff  G =  235  
+ABC: Path  9 --    3976 : 3    5 sky130_fd_sc_hd__nor3_2   A =  10.01  Df =3948.9-1452.6 ps  S = 262.2 ps  Cin =  4.4 ff  Cout =  12.5 ff  Cmax =  92.5 ff  G =  275  
+ABC: Path 10 --    3977 : 3    4 sky130_fd_sc_hd__or3b_4   A =  11.26  Df =4385.9-1634.6 ps  S =  81.9 ps  Cin =  2.1 ff  Cout =  12.9 ff  Cmax = 469.7 ff  G =  588  
+ABC: Path 11 --    3981 : 3    5 sky130_fd_sc_hd__nor3_2   A =  10.01  Df =4695.5-1881.3 ps  S = 299.4 ps  Cin =  4.4 ff  Cout =  15.0 ff  Cmax =  92.5 ff  G =  331  
+ABC: Path 12 --    3985 : 3    5 sky130_fd_sc_hd__nand3b_2 A =  11.26  Df =4870.6-1936.6 ps  S = 133.6 ps  Cin =  3.5 ff  Cout =  16.4 ff  Cmax = 263.7 ff  G =  453  
+ABC: Path 13 --    3989 : 3    4 sky130_fd_sc_hd__or3b_2   A =   8.76  Df =5409.9-2301.5 ps  S = 110.2 ps  Cin =  1.5 ff  Cout =  12.9 ff  Cmax = 269.2 ff  G =  817  
+ABC: Path 14 --    3995 : 3    5 sky130_fd_sc_hd__or3_4    A =  11.26  Df =5845.4-2585.7 ps  S =  86.1 ps  Cin =  2.4 ff  Cout =  16.6 ff  Cmax = 531.9 ff  G =  677  
+ABC: Path 15 --    4180 : 3    3 sky130_fd_sc_hd__mux2_2   A =  11.26  Df =6216.4-2692.9 ps  S =  84.5 ps  Cin =  2.3 ff  Cout =  12.5 ff  Cmax = 297.6 ff  G =  531  
+ABC: Path 16 --    4205 : 4    1 sky130_fd_sc_hd__a211o_2  A =  10.01  Df =6544.1 -695.3 ps  S =  45.2 ps  Cin =  2.4 ff  Cout =   2.5 ff  Cmax = 325.0 ff  G =  100  
+ABC: Path 17 --    4209 : 5    2 sky130_fd_sc_hd__o311a_2  A =  11.26  Df =6682.0  -45.8 ps  S =  66.5 ps  Cin =  2.4 ff  Cout =   7.0 ff  Cmax = 293.9 ff  G =  286  
+ABC: Path 18 --    4211 : 4    4 sky130_fd_sc_hd__a211o_2  A =  10.01  Df =7058.4 -256.1 ps  S =  85.2 ps  Cin =  2.4 ff  Cout =  15.3 ff  Cmax = 325.0 ff  G =  626  
+ABC: Path 19 --    4217 : 4    3 sky130_fd_sc_hd__a31oi_2  A =  12.51  Df =7347.6 -406.7 ps  S = 284.7 ps  Cin =  4.4 ff  Cout =  17.0 ff  Cmax = 118.1 ff  G =  366  
+ABC: Path 20 --    4219 : 3    6 sky130_fd_sc_hd__a21boi_4 A =  18.77  Df =7485.1  -87.5 ps  S = 251.6 ps  Cin =  6.8 ff  Cout =  29.3 ff  Cmax = 215.2 ff  G =  414  
+ABC: Path 21 --    4222 : 4    4 sky130_fd_sc_hd__a211o_2  A =  10.01  Df =7869.5 -259.5 ps  S =  79.8 ps  Cin =  2.4 ff  Cout =  13.9 ff  Cmax = 325.0 ff  G =  570  
+ABC: Path 22 --    4225 : 4    4 sky130_fd_sc_hd__a211o_2  A =  10.01  Df =8232.4 -468.9 ps  S =  67.5 ps  Cin =  2.4 ff  Cout =  10.1 ff  Cmax = 325.0 ff  G =  416  
+ABC: Path 23 --    4227 : 3    4 sky130_fd_sc_hd__a21o_2   A =   8.76  Df =8491.5 -548.7 ps  S = 109.6 ps  Cin =  2.4 ff  Cout =  19.9 ff  Cmax = 309.5 ff  G =  817  
+ABC: Path 24 --    4232 : 5    2 sky130_fd_sc_hd__a311oi_4 A =  26.28  Df =9026.3 -245.3 ps  S = 579.3 ps  Cin =  8.4 ff  Cout =  41.9 ff  Cmax = 133.7 ff  G =  494  
+ABC: Path 25 --    4233 : 2    1 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =9335.0 -331.1 ps  S = 181.3 ps  Cin =  8.5 ff  Cout =   9.4 ff  Cmax = 121.8 ff  G =  106  
+ABC: Path 26 --    4639 : 2    7 sky130_fd_sc_hd__xor2_2   A =  16.27  Df =9548.0 -277.1 ps  S = 202.3 ps  Cin =  8.6 ff  Cout =  12.7 ff  Cmax = 130.0 ff  G =  141  
+ABC: Path 27 --    4641 : 3    1 sky130_fd_sc_hd__mux2_2   A =  11.26  Df =9808.0 -359.1 ps  S =  44.1 ps  Cin =  2.3 ff  Cout =   1.8 ff  Cmax = 297.6 ff  G =   76  
+ABC: Path 28 --    4642 : 1    1 sky130_fd_sc_hd__buf_2    A =   5.00  Df =9986.7 -345.3 ps  S = 168.8 ps  Cin =  1.7 ff  Cout =  33.4 ff  Cmax = 315.9 ff  G = 1936  
+ABC: Start-point = pi5 (\IM0.addr [27]).  End-point = po160 ($auto$rtlil.cc:2684:MuxGate$21730).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o = 1076/ 2157  lat =    0  nd =  4600  edge =   7688  area =25785.96  delay =35.00  lev = 35
+ABC: + write_blif /tmp/yosys-abc-6laXXi/output.blif 
+
+62.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__buf_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4bb_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2a_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or4b_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3b_4 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_4 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or4_4 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o2111a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_2 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a2111o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or4bb_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:       40
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:       30
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:      155
+ABC RESULTS:   sky130_fd_sc_hd__buf_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:      227
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:       52
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:       22
+ABC RESULTS:   sky130_fd_sc_hd__or2b_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:      116
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:       41
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:       32
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       24
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       68
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:      116
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       82
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:       52
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:       62
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:     2105
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:     1091
+ABC RESULTS:        internal signals:     5745
+ABC RESULTS:           input signals:     1076
+ABC RESULTS:          output signals:     2157
+Removing temp directory.
+
+63. Executing SETUNDEF pass (replace undef values with defined constants).
+
+64. Executing HILOMAP pass (mapping to constant drivers).
+
+65. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+66. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \semi_cpu_top..
+Removed 2751 unused cells and 11763 unused wires.
+<suppressed ~3424 debug messages>
+
+67. Executing INSBUF pass (insert buffer cells for connected wires).
+
+68. Executing CHECK pass (checking for obvious problems).
+Checking module semi_cpu_top...
+Found and reported 0 problems.
+
+69. Printing statistics.
+
+=== semi_cpu_top ===
+
+   Number of wires:               2897
+   Number of wire bits:           2937
+   Number of public wires:         408
+   Number of public wire bits:     448
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2934
+     sky130_fd_sc_hd__a2111o_2       3
+     sky130_fd_sc_hd__a211o_2       52
+     sky130_fd_sc_hd__a211oi_2      12
+     sky130_fd_sc_hd__a21bo_2        3
+     sky130_fd_sc_hd__a21boi_2       2
+     sky130_fd_sc_hd__a21boi_4       1
+     sky130_fd_sc_hd__a21o_2        40
+     sky130_fd_sc_hd__a21oi_2       32
+     sky130_fd_sc_hd__a221o_2      155
+     sky130_fd_sc_hd__a221oi_2      21
+     sky130_fd_sc_hd__a22o_2       116
+     sky130_fd_sc_hd__a2bb2o_2       5
+     sky130_fd_sc_hd__a311o_2        3
+     sky130_fd_sc_hd__a311oi_4       1
+     sky130_fd_sc_hd__a31o_2         4
+     sky130_fd_sc_hd__a31oi_2        5
+     sky130_fd_sc_hd__a32o_2         5
+     sky130_fd_sc_hd__a41o_2         2
+     sky130_fd_sc_hd__a41oi_2        2
+     sky130_fd_sc_hd__and2_2       116
+     sky130_fd_sc_hd__and2b_2       10
+     sky130_fd_sc_hd__and3_2        52
+     sky130_fd_sc_hd__and3b_2        7
+     sky130_fd_sc_hd__and4_2        11
+     sky130_fd_sc_hd__and4bb_2       1
+     sky130_fd_sc_hd__buf_1        698
+     sky130_fd_sc_hd__buf_2          9
+     sky130_fd_sc_hd__buf_4          1
+     sky130_fd_sc_hd__dfrtp_2      384
+     sky130_fd_sc_hd__dfxtp_2       29
+     sky130_fd_sc_hd__inv_2        419
+     sky130_fd_sc_hd__mux2_2       227
+     sky130_fd_sc_hd__nand2_2       68
+     sky130_fd_sc_hd__nand3_2       10
+     sky130_fd_sc_hd__nand3b_2       3
+     sky130_fd_sc_hd__nand4_2        5
+     sky130_fd_sc_hd__nor2_2        82
+     sky130_fd_sc_hd__nor2b_2        3
+     sky130_fd_sc_hd__nor3_2         8
+     sky130_fd_sc_hd__nor3b_2        1
+     sky130_fd_sc_hd__nor4_2         3
+     sky130_fd_sc_hd__o2111a_2       2
+     sky130_fd_sc_hd__o211a_2       11
+     sky130_fd_sc_hd__o211ai_2       6
+     sky130_fd_sc_hd__o21a_2        22
+     sky130_fd_sc_hd__o21ai_2       24
+     sky130_fd_sc_hd__o21ba_2        5
+     sky130_fd_sc_hd__o21bai_2       3
+     sky130_fd_sc_hd__o221a_2        5
+     sky130_fd_sc_hd__o221ai_2       1
+     sky130_fd_sc_hd__o22a_2        13
+     sky130_fd_sc_hd__o22ai_2        6
+     sky130_fd_sc_hd__o2bb2a_2       3
+     sky130_fd_sc_hd__o311a_2        4
+     sky130_fd_sc_hd__o31a_2         9
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__o32a_2        14
+     sky130_fd_sc_hd__or2_2         62
+     sky130_fd_sc_hd__or2b_2        10
+     sky130_fd_sc_hd__or3_2         16
+     sky130_fd_sc_hd__or3_4          2
+     sky130_fd_sc_hd__or3b_2         8
+     sky130_fd_sc_hd__or3b_4         2
+     sky130_fd_sc_hd__or4_2         15
+     sky130_fd_sc_hd__or4_4          2
+     sky130_fd_sc_hd__or4b_2         3
+     sky130_fd_sc_hd__or4b_4         1
+     sky130_fd_sc_hd__or4bb_2        2
+     sky130_fd_sc_hd__xnor2_2       41
+     sky130_fd_sc_hd__xor2_2        30
+
+   Chip area for module '\semi_cpu_top': 28698.774400
+
+70. Executing Verilog backend.
+Dumping module `\semi_cpu_top'.
+
+71. Executing JSON backend.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 8fca3d2034, CPU: user 1.16s system 0.04s, MEM: 59.88 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+Time spent: 79% 2x abc (4 sec), 4% 28x opt_expr (0 sec), ...
